@@ -40,6 +40,8 @@ class HomeeViewController: UIViewController, UICollectionViewDataSource, UIColle
             cell.n1value.text = "$ \(allData[indexPath.row]["price_usd"].stringValue)"
             cell.gap24h.text = "24h \(allData[indexPath.row]["percent_change_24h"].stringValue)%"
             
+            
+            
             switch allData[indexPath.row]["symbol"].stringValue {
             case "BTC":
                 cell.n1image.sd_setImage(with: URL(string: "https://s2.coinmarketcap.com/generated/sparklines/web/7d/usd/1.png"))
@@ -349,7 +351,13 @@ class HomeeViewController: UIViewController, UICollectionViewDataSource, UIColle
             default:
             cell.n1image.sd_setImage(with: URL(string: "https://s2.coinmarketcap.com/generated/sparklines/web/7d/usd/1.png"))
             }
+        
+            if allData[indexPath.row]["percent_change_24h"].floatValue <= 0 {
+                cell.gap24h.textColor = .red
+                
+            } else { cell.gap24h.textColor = .green}
             
+            print(allData[indexPath.row]["percent_change_24h"])
             
         }
         
@@ -360,7 +368,11 @@ class HomeeViewController: UIViewController, UICollectionViewDataSource, UIColle
         cell.shadowOfTheColossus.layer.borderColor = UIColor.black.cgColor
         cell.shadowOfTheColossus.layer.cornerRadius = 13
         return cell
+    
     }
+    
+   
+    
 
     /*
     // MARK: - Navigation

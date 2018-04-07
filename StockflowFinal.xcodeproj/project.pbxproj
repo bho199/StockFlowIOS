@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1206DD72206FD00F005DEAC6 /* HomeeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1206DD71206FD00F005DEAC6 /* HomeeCollectionViewCell.swift */; };
+		1207DDBA20758D0A004713E3 /* CryptoDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1207DDB920758D0A004713E3 /* CryptoDetailsViewController.swift */; };
 		122464C6206BB3C100E5E4D3 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122464C5206BB3C100E5E4D3 /* CalendarViewController.swift */; };
 		122464C8206BB71900E5E4D3 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 122464C7206BB6F200E5E4D3 /* WebKit.framework */; };
 		122464CA206BB91700E5E4D3 /* calendar.html in Resources */ = {isa = PBXBuildFile; fileRef = 122464C9206BB91700E5E4D3 /* calendar.html */; };
@@ -22,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		1206DD71206FD00F005DEAC6 /* HomeeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeeCollectionViewCell.swift; sourceTree = "<group>"; };
+		1207DDB920758D0A004713E3 /* CryptoDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoDetailsViewController.swift; sourceTree = "<group>"; };
 		122464C5206BB3C100E5E4D3 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		122464C7206BB6F200E5E4D3 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		122464C9206BB91700E5E4D3 /* calendar.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = calendar.html; sourceTree = SOURCE_ROOT; };
@@ -77,6 +79,7 @@
 				122464C5206BB3C100E5E4D3 /* CalendarViewController.swift */,
 				12BF29CC206EA69800747B28 /* HomeeViewController.swift */,
 				1206DD71206FD00F005DEAC6 /* HomeeCollectionViewCell.swift */,
+				1207DDB920758D0A004713E3 /* CryptoDetailsViewController.swift */,
 				12D9C2672062BB91007D89EC /* Main.storyboard */,
 				12D9C26A2062BB91007D89EC /* Assets.xcassets */,
 				122464C9206BB91700E5E4D3 /* calendar.html */,
@@ -238,6 +241,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1207DDBA20758D0A004713E3 /* CryptoDetailsViewController.swift in Sources */,
 				122464C6206BB3C100E5E4D3 /* CalendarViewController.swift in Sources */,
 				12BF29CD206EA69800747B28 /* HomeeViewController.swift in Sources */,
 				12D9C2662062BB91007D89EC /* ViewController.swift in Sources */,
@@ -316,7 +320,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -367,7 +371,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -381,9 +385,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = PS2GHVK459;
 				INFOPLIST_FILE = StockflowFinal/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = IED.StockflowFinal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -398,9 +401,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = PS2GHVK459;
 				INFOPLIST_FILE = StockflowFinal/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = IED.StockflowFinal;
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -12,8 +12,10 @@ import SwiftyJSON
 import SDWebImage
 
 class HomeeViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
-
-
+    
+    @IBOutlet weak var OurHomeCollectionView: UICollectionView!
+    var ciao = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -24,10 +26,17 @@ class HomeeViewController: UIViewController, UICollectionViewDataSource, UIColle
         // Dispose of any resources that can be recreated.
     }
     
-    @IBOutlet weak var OurHomeCollectionView: UICollectionView!
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 100
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vc: CryptoDetailsViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CryptoDetailsViewController") as! CryptoDetailsViewController
+        vc.cryptoRank = indexPath.row
+        //self.ciao = indexPath.row
+        //print("ciao", self.ciao, indexPath.row)
+        //performSegue(withIdentifier: "cane", sender: nil)
+        self.present(vc, animated: true, completion: nil)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -39,8 +48,6 @@ class HomeeViewController: UIViewController, UICollectionViewDataSource, UIColle
             cell.n1name.text = "\(allData[indexPath.row]["name"].stringValue)"
             cell.n1value.text = "$ \(allData[indexPath.row]["price_usd"].stringValue)"
             cell.gap24h.text = "24h \(allData[indexPath.row]["percent_change_24h"].stringValue)%"
-            
-            
             
             switch allData[indexPath.row]["symbol"].stringValue {
             case "BTC":
@@ -346,19 +353,9 @@ class HomeeViewController: UIViewController, UICollectionViewDataSource, UIColle
             case "PAY":
                 cell.n1image.sd_setImage(with: URL(string: "https://s2.coinmarketcap.com/generated/sparklines/web/7d/usd/1758.png"))
                 cell.n1logo.sd_setImage(with: URL(string:"https://s2.coinmarketcap.com/static/img/coins/16x16/1758.png"))
-            
-            
             default:
             cell.n1image.sd_setImage(with: URL(string: "https://s2.coinmarketcap.com/generated/sparklines/web/7d/usd/1.png"))
             }
-        
-            if allData[indexPath.row]["percent_change_24h"].floatValue <= 0 {
-                cell.gap24h.textColor = .red
-                
-            } else { cell.gap24h.textColor = .green}
-            
-            print(allData[indexPath.row]["percent_change_24h"])
-            
         }
         
         cell.n1image.layer.borderColor = UIColor.black.cgColor
@@ -368,12 +365,32 @@ class HomeeViewController: UIViewController, UICollectionViewDataSource, UIColle
         cell.shadowOfTheColossus.layer.borderColor = UIColor.black.cgColor
         cell.shadowOfTheColossus.layer.cornerRadius = 13
         return cell
-    
     }
     
-   
+//    @IBAction func showDetail(_ sender: Any) {
+//
+//        Alamofire.request("https://api.coinmarketcap.com/v1/ticker/").responseJSON {response in
+//
+//            let allData = JSON(response.result.value!)
+//
+//            CryptoDetailsViewController().symbolDetail.text = "\(allData[self.detail]["symbol"].stringValue)"
+//            CryptoDetailsViewController().nameDetail.text = "\(allData[self.detail]["name"].stringValue)"
+//            CryptoDetailsViewController().rankDetail.text = "\(allData[self.detail]["rank"].stringValue)"
+//            CryptoDetailsViewController().priceDetail.text = "\(allData[self.detail]["price_usd"].stringValue)"
+//            CryptoDetailsViewController().marketCapDetail.text = "\(allData[self.detail]["market_cap_usd"].stringValue)"
+//            CryptoDetailsViewController().volume24hDetail.text = "\(allData[self.detail]["24h_volume_usd"].stringValue)"
+//            CryptoDetailsViewController().availableSupplyDetail.text = "\(allData[self.detail]["available_supply"].stringValue)"
+//            CryptoDetailsViewController().totalSupplyDetail.text = "\(allData[self.detail]["total_supply"].stringValue)"
+//            CryptoDetailsViewController().change1hDetail.text = "\(allData[self.detail]["percent_change_1h"].stringValue)"
+//            CryptoDetailsViewController().change24hDetail.text = "\(allData[self.detail]["percent_change_24h"].stringValue)"
+//            CryptoDetailsViewController().change7gDetail.text = "\(allData[self.detail]["percent_change_7g"].stringValue)"
+//        }
+//
+//        print (self.detail)
     
-
+//    }
+    
+    
     /*
     // MARK: - Navigation
 

@@ -12,11 +12,12 @@ import SwiftyJSON
 
 class HomeeCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var n1name: UILabel!
     @IBOutlet weak var n1image: UIImageView!
     @IBOutlet weak var n1logo: UIImageView!
-    @IBOutlet weak var n1name: UILabel!
     @IBOutlet weak var n1value: UILabel!
     @IBOutlet weak var gap24h: UILabel!
     @IBOutlet weak var shadowOfTheColossus: UIView!
+    
 }
 

@@ -356,6 +356,14 @@ class HomeeViewController: UIViewController, UICollectionViewDataSource, UIColle
             default:
             cell.n1image.sd_setImage(with: URL(string: "https://s2.coinmarketcap.com/generated/sparklines/web/7d/usd/1.png"))
             }
+            
+            if allData[indexPath.row]["percent_change_24h"].floatValue <= 0 {
+                cell.gap24h.textColor = .red
+                
+            } else { cell.gap24h.textColor = .green}
+            
+            print(allData[indexPath.row]["percent_change_24h"])
+
         }
         
         cell.n1image.layer.borderColor = UIColor.black.cgColor

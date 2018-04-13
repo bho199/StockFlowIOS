@@ -33,10 +33,7 @@ class ViewController: UIViewController {
         login.setTitleColor (UIColor.white, for: .normal)
         //login.addTarget(self, action: #selector(home), for: .touchUpInside)
         
-        noAccount.setTitleColor (UIColor.white, for: .normal)
-        
         register.setTitle("Registrati qui", for: .normal)
-        register.setTitleColor (UIColor.white, for: .normal)
         
         self.view.addSubview(register)
         self.view.addSubview(login)
@@ -44,7 +41,6 @@ class ViewController: UIViewController {
         self.view.addSubview(passwordText)
         self.view.addSubview(stockTitle)
         self.view.addSubview(noAccount)
-        self.view.backgroundColor = UIColor.black
     }
 
     override func didReceiveMemoryWarning() {

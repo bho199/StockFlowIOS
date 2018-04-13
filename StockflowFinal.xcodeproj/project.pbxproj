@@ -12,12 +12,15 @@
 		122464C6206BB3C100E5E4D3 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122464C5206BB3C100E5E4D3 /* CalendarViewController.swift */; };
 		122464C8206BB71900E5E4D3 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 122464C7206BB6F200E5E4D3 /* WebKit.framework */; };
 		122464CA206BB91700E5E4D3 /* calendar.html in Resources */ = {isa = PBXBuildFile; fileRef = 122464C9206BB91700E5E4D3 /* calendar.html */; };
+		12A1A184207C56F20066C367 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A1A183207C56F20066C367 /* ProfileViewController.swift */; };
+		12A1A186207C57010066C367 /* TrendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A1A185207C57010066C367 /* TrendsViewController.swift */; };
 		12BF29CD206EA69800747B28 /* HomeeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12BF29CC206EA69800747B28 /* HomeeViewController.swift */; };
 		12D9C2642062BB91007D89EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D9C2632062BB91007D89EC /* AppDelegate.swift */; };
 		12D9C2662062BB91007D89EC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D9C2652062BB91007D89EC /* ViewController.swift */; };
 		12D9C2692062BB91007D89EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12D9C2672062BB91007D89EC /* Main.storyboard */; };
 		12D9C26B2062BB91007D89EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12D9C26A2062BB91007D89EC /* Assets.xcassets */; };
 		12D9C26E2062BB91007D89EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12D9C26C2062BB91007D89EC /* LaunchScreen.storyboard */; };
+		12F8188A207DF3BB009DC418 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F81889207DF3BB009DC418 /* SettingsViewController.swift */; };
 		2344EC6748647623199AEF0A /* Pods_StockflowFinal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46F7A2859E8671D901525FDD /* Pods_StockflowFinal.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +30,8 @@
 		122464C5206BB3C100E5E4D3 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		122464C7206BB6F200E5E4D3 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		122464C9206BB91700E5E4D3 /* calendar.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = calendar.html; sourceTree = SOURCE_ROOT; };
+		12A1A183207C56F20066C367 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		12A1A185207C57010066C367 /* TrendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendsViewController.swift; sourceTree = "<group>"; };
 		12BF29CC206EA69800747B28 /* HomeeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeeViewController.swift; sourceTree = "<group>"; };
 		12D9C2602062BB91007D89EC /* StockflowFinal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StockflowFinal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		12D9C2632062BB91007D89EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -35,6 +40,7 @@
 		12D9C26A2062BB91007D89EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		12D9C26D2062BB91007D89EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		12D9C26F2062BB91007D89EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		12F81889207DF3BB009DC418 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		2C4D6DD20CCB4D12BE22723C /* Pods-StockflowFinal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StockflowFinal.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StockflowFinal/Pods-StockflowFinal.debug.xcconfig"; sourceTree = "<group>"; };
 		46F7A2859E8671D901525FDD /* Pods_StockflowFinal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StockflowFinal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EEB4E887BD6A03450204BB8 /* Pods-StockflowFinal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StockflowFinal.release.xcconfig"; path = "Pods/Target Support Files/Pods-StockflowFinal/Pods-StockflowFinal.release.xcconfig"; sourceTree = "<group>"; };
@@ -77,7 +83,10 @@
 				12D9C2632062BB91007D89EC /* AppDelegate.swift */,
 				12D9C2652062BB91007D89EC /* ViewController.swift */,
 				122464C5206BB3C100E5E4D3 /* CalendarViewController.swift */,
+				12F81889207DF3BB009DC418 /* SettingsViewController.swift */,
 				12BF29CC206EA69800747B28 /* HomeeViewController.swift */,
+				12A1A183207C56F20066C367 /* ProfileViewController.swift */,
+				12A1A185207C57010066C367 /* TrendsViewController.swift */,
 				1206DD71206FD00F005DEAC6 /* HomeeCollectionViewCell.swift */,
 				1207DDB920758D0A004713E3 /* CryptoDetailsViewController.swift */,
 				12D9C2672062BB91007D89EC /* Main.storyboard */,
@@ -245,8 +254,11 @@
 				122464C6206BB3C100E5E4D3 /* CalendarViewController.swift in Sources */,
 				12BF29CD206EA69800747B28 /* HomeeViewController.swift in Sources */,
 				12D9C2662062BB91007D89EC /* ViewController.swift in Sources */,
+				12A1A186207C57010066C367 /* TrendsViewController.swift in Sources */,
+				12A1A184207C56F20066C367 /* ProfileViewController.swift in Sources */,
 				1206DD72206FD00F005DEAC6 /* HomeeCollectionViewCell.swift in Sources */,
 				12D9C2642062BB91007D89EC /* AppDelegate.swift in Sources */,
+				12F8188A207DF3BB009DC418 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

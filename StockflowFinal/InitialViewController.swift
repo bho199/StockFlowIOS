@@ -1,16 +1,16 @@
 //
-//  ProfileViewController.swift
+//  InitialViewController.swift
 //  StockflowFinal
 //
-//  Created by Alessandro Li Greci on 10/04/18.
+//  Created by Alessandro Li Greci on 30/04/18.
 //  Copyright © 2018 Alessandro Li Greci. All rights reserved.
 //
 
 import UIKit
 
-class ProfileViewController: UIViewController {
-    @IBOutlet weak var profileUsername: UILabel!
-    
+
+class InitialViewController: UIViewController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
 

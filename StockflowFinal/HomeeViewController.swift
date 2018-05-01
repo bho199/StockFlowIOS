@@ -32,7 +32,7 @@ class HomeeViewController: UIViewController, UICollectionViewDataSource, UIColle
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let vc: CryptoDetailsViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CryptoDetailsViewController") as! CryptoDetailsViewController
-        vc.cryptoRank = indexPath.row
+        vc.cryptoRank = indexPath.row 
         self.present(vc, animated: true, completion: nil)
     }
     

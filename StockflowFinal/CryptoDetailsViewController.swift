@@ -10,8 +10,19 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-class CryptoDetailsViewController: UIViewController {
+class CryptoDetailsViewController: UIViewController, UIPopoverPresentationControllerDelegate {
     
+    var gino = 0
+    var price:Float = 0
+    
+    @IBAction func buyButton(_ sender: Any) {
+        showInputDialogue()
+        
+    }
+    
+    func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
+        return .none
+    }
     @IBOutlet weak var nameDetail: UILabel!
     @IBOutlet weak var rankDetail: UILabel!
     @IBOutlet weak var priceDetail: UILabel!
@@ -23,7 +34,6 @@ class CryptoDetailsViewController: UIViewController {
     @IBOutlet weak var change1hDetail: UILabel!
     @IBOutlet weak var change24hDetail: UILabel!
     @IBOutlet weak var change7gDetail: UILabel!
-    
     @IBOutlet weak var backPage: UIButton!
     var cryptoRank = 0
     
@@ -52,8 +62,45 @@ class CryptoDetailsViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    func showInputDialogue() {
+        let alertController = UIAlertController(title: "Enter Amount", message: "", preferredStyle: .alert)
+        
+        
+        //adding textfields to our dialog box
+        alertController.addTextField { (textField) in
+            textField.placeholder = "Enter Money Amount"
+            textField.keyboardType = .numberPad
+        }
     
-
+    
+        //the confirm action taking the inputs
+        let confirmAction = UIAlertAction(title: "Buy", style: .default) { (_) in
+            print(alertController.textFields![0].text!)
+            
+            Alamofire.request("https://api.coinmarketcap.com/v1/ticker/").responseJSON {response in
+                let allData = JSON(response.result.value!)
+                self.price = allData[self.cryptoRank]["price_usd"].floatValue
+            }
+            
+            let parameters:Parameters = [
+                "name" : self.nameDetail.text!,
+                "quantity" : Float(alertController.textFields![0].text!)! / self.price,
+                "value" : alertController.textFields![0].text!,
+                "user_id" : 4 //quello che logga ma prima devo fare il login grazze pietr
+            ]
+            
+            Alamofire.request("http://stockflow.test/api/crypto", method: .post, parameters: parameters).responseJSON {response in
+                print(response)
+            }
+            
+        }
+    
+        //adding the action to dialogbox
+        alertController.addAction(confirmAction)
+        
+        //finally presenting the dialog box
+        self.present(alertController, animated: true, completion: nil)
+    }
     /*
     // MARK: - Navigation
 

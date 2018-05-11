@@ -14,7 +14,6 @@ import SDWebImage
 class HomeeViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
     @IBOutlet weak var OurHomeCollectionView: UICollectionView!
-    var ciao = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()

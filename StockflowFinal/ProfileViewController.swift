@@ -11,6 +11,12 @@ import UIKit
 class ProfileViewController: UIViewController {
     @IBOutlet weak var profileUsername: UILabel!
     
+    @IBAction func logout(_ sender: Any) {
+        UserDefaults.standard.set(false, forKey: "IsUserLoggedIn")
+        let loginPage: ViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "loginPage") as! ViewController
+        self.present(loginPage, animated: true, completion: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

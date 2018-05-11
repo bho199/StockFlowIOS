@@ -12,7 +12,6 @@ import SwiftyJSON
 
 class CryptoDetailsViewController: UIViewController, UIPopoverPresentationControllerDelegate {
     
-    var gino = 0
     var price:Float = 0
     
     @IBAction func buyButton(_ sender: Any) {
@@ -72,7 +71,6 @@ class CryptoDetailsViewController: UIViewController, UIPopoverPresentationContro
             textField.keyboardType = .numberPad
         }
     
-    
         //the confirm action taking the inputs
         let confirmAction = UIAlertAction(title: "Buy", style: .default) { (_) in
             print(alertController.textFields![0].text!)
@@ -80,17 +78,21 @@ class CryptoDetailsViewController: UIViewController, UIPopoverPresentationContro
             Alamofire.request("https://api.coinmarketcap.com/v1/ticker/").responseJSON {response in
                 let allData = JSON(response.result.value!)
                 self.price = allData[self.cryptoRank]["price_usd"].floatValue
-            }
-            
-            let parameters:Parameters = [
-                "name" : self.nameDetail.text!,
-                "quantity" : Float(alertController.textFields![0].text!)! / self.price,
-                "value" : alertController.textFields![0].text!,
-                "user_id" : 4 //quello che logga ma prima devo fare il login grazze pietr
-            ]
-            
-            Alamofire.request("http://stockflow.test/api/crypto", method: .post, parameters: parameters).responseJSON {response in
-                print(response)
+                
+                response.result.ifSuccess {
+                    
+                    let parameters:Parameters = [
+                        "name" : self.nameDetail.text!,
+                        "quantity" : Float(alertController.textFields![0].text!)! / self.price,
+                        "value" : alertController.textFields![0].text!,
+                        "user_id" : UserDefaults.standard.integer(forKey: "userId")
+                    ]
+                    
+                    Alamofire.request("http://stockflow.test/api/crypto", method: .post, parameters: parameters).responseJSON {response in
+                        let allData = JSON(response.result.value!)
+                        print(response)
+                    }
+                }
             }
             
         }

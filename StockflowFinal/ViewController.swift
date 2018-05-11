@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class ViewController: UIViewController {
     
@@ -17,21 +19,29 @@ class ViewController: UIViewController {
     @IBOutlet weak var usernameText: UITextField!
     @IBOutlet weak var stockTitle: UILabel!
     
+    var username = ""
+    var password = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if UserDefaults.standard.bool(forKey: "IsUserLoggedIn") == true{
+            let vc2: HomeeViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeeViewController") as! HomeeViewController
+            self.present(vc2, animated: false, completion: nil)
+        }
+        
         stockTitle.textColor = UIColor.white
         
         usernameText.borderStyle = UITextBorderStyle.roundedRect
-        usernameText.keyboardType = UIKeyboardType.asciiCapableNumberPad
+        usernameText.keyboardType = UIKeyboardType.asciiCapable
+        usernameText.placeholder = "Enter Your Email"
         
         passwordText.borderStyle = UITextBorderStyle.roundedRect
-        passwordText.keyboardType = UIKeyboardType.asciiCapableNumberPad
+        passwordText.keyboardType = UIKeyboardType.asciiCapable
+        passwordText.placeholder = "Enter Your Password"
         
         login.backgroundColor = UIColor.gray
         login.setTitleColor (UIColor.white, for: .normal)
-        //login.addTarget(self, action: #selector(home), for: .touchUpInside)
         
         register.setTitle("Registrati qui", for: .normal)
         
@@ -42,12 +52,33 @@ class ViewController: UIViewController {
         self.view.addSubview(stockTitle)
         self.view.addSubview(noAccount)
     }
+    
+    @IBAction func authenticateUser(_ sender: Any) {
+        
+        let loginParameters:Parameters = [
+            //"Accept": "application/json",
+            "email" : self.usernameText.text!,
+            "password" : self.passwordText.text!
+        ]
+        
+        print(loginParameters)
+        
+        Alamofire.request("http://stockflow.test/api/users", method: .post, parameters: loginParameters).responseJSON {response in
+            let data = JSON(response.result.value!)
+            print(data)
+            if data[0].isEmpty == false {
+                UserDefaults.standard.set(true, forKey: "IsUserLoggedIn")
+                UserDefaults.standard.set(data[0]["id"].intValue, forKey: "userId")
+                let vc2: HomeeViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeeViewController") as! HomeeViewController
+                self.present(vc2, animated: true, completion: nil)
+            } else {
+            }
+        }        
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
 }
 

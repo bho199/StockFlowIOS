@@ -7,13 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1202F2052097540F00827F78 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1202F2042097540F00827F78 /* InitialViewController.swift */; };
 		1206DD72206FD00F005DEAC6 /* HomeeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1206DD71206FD00F005DEAC6 /* HomeeCollectionViewCell.swift */; };
 		1207DDBA20758D0A004713E3 /* CryptoDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1207DDB920758D0A004713E3 /* CryptoDetailsViewController.swift */; };
 		122464C6206BB3C100E5E4D3 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122464C5206BB3C100E5E4D3 /* CalendarViewController.swift */; };
 		122464C8206BB71900E5E4D3 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 122464C7206BB6F200E5E4D3 /* WebKit.framework */; };
 		122464CA206BB91700E5E4D3 /* calendar.html in Resources */ = {isa = PBXBuildFile; fileRef = 122464C9206BB91700E5E4D3 /* calendar.html */; };
+		126D5A4820A0781500D0F3AA /* WalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126D5A4720A0781500D0F3AA /* WalletViewController.swift */; };
 		12A1A184207C56F20066C367 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A1A183207C56F20066C367 /* ProfileViewController.swift */; };
 		12A1A186207C57010066C367 /* TrendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A1A185207C57010066C367 /* TrendsViewController.swift */; };
+		12BEFD3F20A1C73600325B67 /* WalletCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12BEFD3E20A1C73600325B67 /* WalletCollectionViewCell.swift */; };
 		12BF29CD206EA69800747B28 /* HomeeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12BF29CC206EA69800747B28 /* HomeeViewController.swift */; };
 		12D9C2642062BB91007D89EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D9C2632062BB91007D89EC /* AppDelegate.swift */; };
 		12D9C2662062BB91007D89EC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D9C2652062BB91007D89EC /* ViewController.swift */; };
@@ -25,13 +28,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1202F2042097540F00827F78 /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		1206DD71206FD00F005DEAC6 /* HomeeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeeCollectionViewCell.swift; sourceTree = "<group>"; };
 		1207DDB920758D0A004713E3 /* CryptoDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoDetailsViewController.swift; sourceTree = "<group>"; };
 		122464C5206BB3C100E5E4D3 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		122464C7206BB6F200E5E4D3 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		122464C9206BB91700E5E4D3 /* calendar.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = calendar.html; sourceTree = SOURCE_ROOT; };
+		126D5A4720A0781500D0F3AA /* WalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletViewController.swift; sourceTree = "<group>"; };
 		12A1A183207C56F20066C367 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		12A1A185207C57010066C367 /* TrendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendsViewController.swift; sourceTree = "<group>"; };
+		12BEFD3E20A1C73600325B67 /* WalletCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletCollectionViewCell.swift; sourceTree = "<group>"; };
 		12BF29CC206EA69800747B28 /* HomeeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeeViewController.swift; sourceTree = "<group>"; };
 		12D9C2602062BB91007D89EC /* StockflowFinal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StockflowFinal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		12D9C2632062BB91007D89EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -84,6 +90,9 @@
 				12D9C2652062BB91007D89EC /* ViewController.swift */,
 				122464C5206BB3C100E5E4D3 /* CalendarViewController.swift */,
 				12F81889207DF3BB009DC418 /* SettingsViewController.swift */,
+				126D5A4720A0781500D0F3AA /* WalletViewController.swift */,
+				12BEFD3E20A1C73600325B67 /* WalletCollectionViewCell.swift */,
+				1202F2042097540F00827F78 /* InitialViewController.swift */,
 				12BF29CC206EA69800747B28 /* HomeeViewController.swift */,
 				12A1A183207C56F20066C367 /* ProfileViewController.swift */,
 				12A1A185207C57010066C367 /* TrendsViewController.swift */,
@@ -128,7 +137,6 @@
 				12D9C25D2062BB91007D89EC /* Frameworks */,
 				12D9C25E2062BB91007D89EC /* Resources */,
 				94652FC7C3FC9F36C34F5FF4 /* [CP] Embed Pods Frameworks */,
-				EDED13D2B5B0E106753B6CB4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -228,21 +236,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		EDED13D2B5B0E106753B6CB4 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StockflowFinal/Pods-StockflowFinal-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -254,7 +247,10 @@
 				122464C6206BB3C100E5E4D3 /* CalendarViewController.swift in Sources */,
 				12BF29CD206EA69800747B28 /* HomeeViewController.swift in Sources */,
 				12D9C2662062BB91007D89EC /* ViewController.swift in Sources */,
+				126D5A4820A0781500D0F3AA /* WalletViewController.swift in Sources */,
+				12BEFD3F20A1C73600325B67 /* WalletCollectionViewCell.swift in Sources */,
 				12A1A186207C57010066C367 /* TrendsViewController.swift in Sources */,
+				1202F2052097540F00827F78 /* InitialViewController.swift in Sources */,
 				12A1A184207C56F20066C367 /* ProfileViewController.swift in Sources */,
 				1206DD72206FD00F005DEAC6 /* HomeeCollectionViewCell.swift in Sources */,
 				12D9C2642062BB91007D89EC /* AppDelegate.swift in Sources */,
@@ -397,7 +393,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = PS2GHVK459;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = StockflowFinal/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -414,7 +410,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = PS2GHVK459;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = StockflowFinal/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

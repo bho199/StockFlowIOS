@@ -154,9 +154,9 @@ class HomeeViewController: UIViewController, UICollectionViewDataSource, UIColle
             case "STRAT":
                 cell.n1image.sd_setImage(with: URL(string: "https://s2.coinmarketcap.com/generated/sparklines/web/7d/usd/1343.png"))
                 cell.n1logo.sd_setImage(with: URL(string:"https://s2.coinmarketcap.com/static/img/coins/16x16/1343.png"))
-            case "BTS":
-                cell.n1image.sd_setImage(with: URL(string: "https://s2.coinmarketcap.com/generated/sparklines/web/7d/usd/363.png"))
-                cell.n1logo.sd_setImage(with: URL(string:"https://s2.coinmarketcap.com/static/img/coins/16x16/363.png"))
+//            case "BTS":
+//                cell.n1image.sd_setImage(with: URL(string: "https://s2.coinmarketcap.com/generated/sparklines/web/7d/usd/363.png"))
+//                cell.n1logo.sd_setImage(with: URL(string:"https://s2.coinmarketcap.com/static/img/coins/16x16/363.png"))
             case "SNT":
                 cell.n1image.sd_setImage(with: URL(string: "https://s2.coinmarketcap.com/generated/sparklines/web/7d/usd/1759.png"))
                 cell.n1logo.sd_setImage(with: URL(string:"https://s2.coinmarketcap.com/static/img/coins/16x16/1759.png"))

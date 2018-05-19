@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class TrendsViewController: UIViewController {
 
@@ -19,6 +21,17 @@ class TrendsViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+//    let parameters:Parameters = [
+//        "name" : ,
+//        "value" : ,
+//        "user_id" : UserDefaults.standard.integer(forKey: "userId")
+//    ]
+//    
+//    Alamofire.request("http://stockflow.test/api/users", method: .post, parameters: parameters).responseJSON {response in
+//    let allData = JSON(response.result.value!)
+//    print(response)
+//    }
     
 
     /*

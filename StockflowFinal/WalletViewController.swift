@@ -17,6 +17,8 @@ class WalletViewController: UIViewController, UICollectionViewDelegate, UICollec
     @IBOutlet weak var cv: UICollectionView!
     var allData = JSON()
     var data = JSON()
+    var walletVal:Float = 0.0
+    var walletCha:Float = 0.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,13 +31,21 @@ class WalletViewController: UIViewController, UICollectionViewDelegate, UICollec
         Alamofire.request("http://stockflow.test/api/wallet", method: .post, parameters: walletParameters).responseJSON {response in
             self.allData = JSON(response.result.value!)
             self.cv.reloadData()
-        }
-        
-        Alamofire.request("https://api.coinmarketcap.com/v1/ticker/").responseJSON {response in
             
-            self.data = JSON(response.result.value!)
-            self.cv.reloadData()
-        // Do any additional setup after loading the view.
+            Alamofire.request("https://api.coinmarketcap.com/v1/ticker/").responseJSON {response in
+                
+                self.data = JSON(response.result.value!)
+                self.cv.reloadData()
+                var indexp = 0
+                for (_, crypto) in self.allData {
+                    indexp = self.findValue(name: crypto["name"].stringValue)
+                    self.walletVal += self.data[indexp]["price_usd"].floatValue * crypto["quantity"].floatValue
+                    self.walletCha += crypto["value"].floatValue
+                }
+                self.walletTotalValue.text = "$ \(self.walletVal)"
+                self.walletTotalChange.text = "\(((self.walletCha * 100) / self.walletVal - 100) * -1) %"
+                // Do any additional setup after loading the view.
+            }
         }
     }
     
@@ -62,11 +72,22 @@ class WalletViewController: UIViewController, UICollectionViewDelegate, UICollec
         let cryptoIndex = findValue(name: allData[indexPath.row]["name"].stringValue)
         walletCell.walletCrypto.text = "\(allData[indexPath.row]["name"].stringValue)"
         walletCell.walletBuyValue.text = "$ \(allData[indexPath.row]["value"].floatValue)"
-        walletCell.walletBuyTime.text = "\(allData[indexPath.row]["created_at"].stringValue)"
+        //walletCell.walletBuyTime.text = "\(allData[indexPath.row]["created_at"].stringValue)"
         walletCell.walletQuantity.text = "\(allData[indexPath.row]["quantity"].floatValue)"
-        walletCell.walletChange.text = "\((data[cryptoIndex]["price_usd"].floatValue / (allData[indexPath.row]["value"].floatValue / allData[indexPath.row]["quantity"].floatValue)) * 100 - 100) %"
-        print(allData[indexPath.row]["value"].floatValue / allData[indexPath.row]["quantity"].floatValue)
-        walletCell.walletActualValue.text = "$\(data[cryptoIndex]["price_usd"].floatValue)"
+        walletCell.walletChange.text = "\(data[cryptoIndex]["price_usd"].floatValue / (allData[indexPath.row]["value"].floatValue / allData[indexPath.row]["quantity"].floatValue) * 100 - 100) %"
+//        print(data[cryptoIndex]["price_usd"].floatValue) 8317.62
+//        print(allData[indexPath.row]["value"].floatValue) 5     832,459251
+//        print(allData[indexPath.row]["quantity"].floatValue) 0.0060063
+        walletCell.walletActualValue.text = "$ \(data[cryptoIndex]["price_usd"].floatValue * allData[indexPath.row]["quantity"].floatValue)"
+        let dateFormatterGet = DateFormatter()
+        dateFormatterGet.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        
+        let dateFormatterPrint = DateFormatter()
+        dateFormatterPrint.dateFormat = "MMM dd, yyyy HH:mm"
+        
+        if let date = dateFormatterGet.date(from: "\(allData[indexPath.row]["created_at"].stringValue)"){
+            walletCell.walletBuyTime.text = dateFormatterPrint.string(from: date)
+        }
         
         walletCell.walletView.layer.borderWidth = 0
         walletCell.walletView.layer.borderColor = UIColor.black.cgColor

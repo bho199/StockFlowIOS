@@ -90,7 +90,6 @@ class CryptoDetailsViewController: UIViewController, UIPopoverPresentationContro
                     
                     Alamofire.request("http://stockflow.test/api/crypto", method: .post, parameters: parameters).responseJSON {response in
                         let allData = JSON(response.result.value!)
-                        print(response)
                     }
                 }
             }

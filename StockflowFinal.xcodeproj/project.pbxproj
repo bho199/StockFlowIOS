@@ -13,6 +13,7 @@
 		122464C6206BB3C100E5E4D3 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122464C5206BB3C100E5E4D3 /* CalendarViewController.swift */; };
 		122464C8206BB71900E5E4D3 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 122464C7206BB6F200E5E4D3 /* WebKit.framework */; };
 		122464CA206BB91700E5E4D3 /* calendar.html in Resources */ = {isa = PBXBuildFile; fileRef = 122464C9206BB91700E5E4D3 /* calendar.html */; };
+		12448B1020C6BF1E00422B40 /* TrendsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12448B0F20C6BF1E00422B40 /* TrendsCollectionViewCell.swift */; };
 		126D5A4820A0781500D0F3AA /* WalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126D5A4720A0781500D0F3AA /* WalletViewController.swift */; };
 		12A1A184207C56F20066C367 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A1A183207C56F20066C367 /* ProfileViewController.swift */; };
 		12A1A186207C57010066C367 /* TrendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A1A185207C57010066C367 /* TrendsViewController.swift */; };
@@ -34,6 +35,7 @@
 		122464C5206BB3C100E5E4D3 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		122464C7206BB6F200E5E4D3 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		122464C9206BB91700E5E4D3 /* calendar.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = calendar.html; sourceTree = SOURCE_ROOT; };
+		12448B0F20C6BF1E00422B40 /* TrendsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendsCollectionViewCell.swift; sourceTree = "<group>"; };
 		126D5A4720A0781500D0F3AA /* WalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletViewController.swift; sourceTree = "<group>"; };
 		12A1A183207C56F20066C367 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		12A1A185207C57010066C367 /* TrendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendsViewController.swift; sourceTree = "<group>"; };
@@ -65,6 +67,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1255E69020BC435A00559B8B /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				122464C5206BB3C100E5E4D3 /* CalendarViewController.swift */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
+		1255E69120BC436B00559B8B /* Wallet */ = {
+			isa = PBXGroup;
+			children = (
+				12BEFD3E20A1C73600325B67 /* WalletCollectionViewCell.swift */,
+				126D5A4720A0781500D0F3AA /* WalletViewController.swift */,
+			);
+			path = Wallet;
+			sourceTree = "<group>";
+		};
+		1255E69220BC439200559B8B /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				1206DD71206FD00F005DEAC6 /* HomeeCollectionViewCell.swift */,
+				1202F2042097540F00827F78 /* InitialViewController.swift */,
+				12BF29CC206EA69800747B28 /* HomeeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		12D9C2572062BB91007D89EC = {
 			isa = PBXGroup;
 			children = (
@@ -88,15 +117,13 @@
 			children = (
 				12D9C2632062BB91007D89EC /* AppDelegate.swift */,
 				12D9C2652062BB91007D89EC /* ViewController.swift */,
-				122464C5206BB3C100E5E4D3 /* CalendarViewController.swift */,
 				12F81889207DF3BB009DC418 /* SettingsViewController.swift */,
-				126D5A4720A0781500D0F3AA /* WalletViewController.swift */,
-				12BEFD3E20A1C73600325B67 /* WalletCollectionViewCell.swift */,
-				1202F2042097540F00827F78 /* InitialViewController.swift */,
-				12BF29CC206EA69800747B28 /* HomeeViewController.swift */,
+				1255E69020BC435A00559B8B /* Calendar */,
+				1255E69120BC436B00559B8B /* Wallet */,
+				1255E69220BC439200559B8B /* Home */,
 				12A1A183207C56F20066C367 /* ProfileViewController.swift */,
 				12A1A185207C57010066C367 /* TrendsViewController.swift */,
-				1206DD71206FD00F005DEAC6 /* HomeeCollectionViewCell.swift */,
+				12448B0F20C6BF1E00422B40 /* TrendsCollectionViewCell.swift */,
 				1207DDB920758D0A004713E3 /* CryptoDetailsViewController.swift */,
 				12D9C2672062BB91007D89EC /* Main.storyboard */,
 				12D9C26A2062BB91007D89EC /* Assets.xcassets */,
@@ -248,6 +275,7 @@
 				12BF29CD206EA69800747B28 /* HomeeViewController.swift in Sources */,
 				12D9C2662062BB91007D89EC /* ViewController.swift in Sources */,
 				126D5A4820A0781500D0F3AA /* WalletViewController.swift in Sources */,
+				12448B1020C6BF1E00422B40 /* TrendsCollectionViewCell.swift in Sources */,
 				12BEFD3F20A1C73600325B67 /* WalletCollectionViewCell.swift in Sources */,
 				12A1A186207C57010066C367 /* TrendsViewController.swift in Sources */,
 				1202F2052097540F00827F78 /* InitialViewController.swift in Sources */,

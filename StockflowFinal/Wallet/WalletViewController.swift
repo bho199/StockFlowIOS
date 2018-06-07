@@ -43,8 +43,14 @@ class WalletViewController: UIViewController, UICollectionViewDelegate, UICollec
                     self.walletCha += crypto["value"].floatValue
                 }
                 self.walletTotalValue.text = "$ \(self.walletVal)"
-                self.walletTotalChange.text = "\(((self.walletCha * 100) / self.walletVal - 100) * -1) %"
+//                self.walletTotalChange.text = "\(((self.walletCha * 100) / self.walletVal - 100) * -1) %"
+                self.walletTotalChange.text = "\(((self.walletVal / self.walletCha) - 1) * 100) %"
                 // Do any additional setup after loading the view.
+                if ((((self.walletVal / self.walletCha) - 1) * 100) >= 0) {
+                    self.walletTotalChange.textColor = UIColor.green
+                } else {
+                    self.walletTotalChange.textColor = UIColor.red
+                }
             }
         }
     }
@@ -75,6 +81,11 @@ class WalletViewController: UIViewController, UICollectionViewDelegate, UICollec
         //walletCell.walletBuyTime.text = "\(allData[indexPath.row]["created_at"].stringValue)"
         walletCell.walletQuantity.text = "\(allData[indexPath.row]["quantity"].floatValue)"
         walletCell.walletChange.text = "\(data[cryptoIndex]["price_usd"].floatValue / (allData[indexPath.row]["value"].floatValue / allData[indexPath.row]["quantity"].floatValue) * 100 - 100) %"
+        if ((data[cryptoIndex]["price_usd"].floatValue / (allData[indexPath.row]["value"].floatValue / allData[indexPath.row]["quantity"].floatValue) * 100 - 100) >= 0) {
+            walletCell.walletChange.textColor = UIColor.green
+        } else {
+            walletCell.walletChange.textColor = UIColor.red
+        }
 //        print(data[cryptoIndex]["price_usd"].floatValue) 8317.62
 //        print(allData[indexPath.row]["value"].floatValue) 5     832,459251
 //        print(allData[indexPath.row]["quantity"].floatValue) 0.0060063

@@ -18,6 +18,5 @@ class HomeeCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var n1value: UILabel!
     @IBOutlet weak var gap24h: UILabel!
     @IBOutlet weak var shadowOfTheColossus: UIView!
-    
 }
 

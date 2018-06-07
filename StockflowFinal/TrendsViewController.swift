@@ -10,38 +10,26 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-class TrendsViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+class TrendsViewController: UIViewController //UICollectionViewDelegate, UICollectionViewDataSource
+    {
     
-//    let parameters:Parameters = [
-//        "name" : ,
-//        "value" : ,
-//        "user_id" : UserDefaults.standard.integer(forKey: "userId")
-//    ]
-//    
-//    Alamofire.request("http://stockflow.test/api/users", method: .post, parameters: parameters).responseJSON {response in
-//    let allData = JSON(response.result.value!)
-//    print(response)
+    @IBOutlet weak var trendsCollection: UICollectionView!
+//    var allData = JSON()
+//
+//
+//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//
 //    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+//    
+//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+//
+//        let trendsParameters:Parameters = [
+//            "user_id" : UserDefaults.standard.integer(forKey: "userId")
+//        ]
+//
+//        Alamofire.request("http://stockflow.test/api/wallet", method: .post, parameters: trendsParameters).responseJSON {response in
+//            self.allData = JSON(response.result.value!)
+//            self.trendsCollection.reloadData()
+//        }
+//    }
 }

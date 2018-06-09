@@ -61,7 +61,7 @@ class ViewController: UIViewController {
             "password" : self.passwordText.text!
         ]
         
-        Alamofire.request("http://stockflow.test/api/users", method: .post, parameters: loginParameters).responseJSON {response in
+        JsonManager.sharedInstance.manager.request("https://stockflow.test/api/users", method: .post, parameters: loginParameters).responseJSON {response in
             let data = JSON(response.result.value!)
             if data[0].isEmpty == false {
                 UserDefaults.standard.set(true, forKey: "IsUserLoggedIn")

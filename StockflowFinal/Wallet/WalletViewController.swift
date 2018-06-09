@@ -28,11 +28,11 @@ class WalletViewController: UIViewController, UICollectionViewDelegate, UICollec
             "user_id" : UserDefaults.standard.integer(forKey: "userId")
         ]
         
-        Alamofire.request("http://stockflow.test/api/wallet", method: .post, parameters: walletParameters).responseJSON {response in
+        JsonManager.sharedInstance.manager.request("https://stockflow.test/api/wallet", method: .post, parameters: walletParameters).responseJSON {response in
             self.allData = JSON(response.result.value!)
             self.cv.reloadData()
             
-            Alamofire.request("https://api.coinmarketcap.com/v1/ticker/").responseJSON {response in
+            JsonManager.sharedInstance.manager.request("https://api.coinmarketcap.com/v1/ticker/").responseJSON {response in
                 
                 self.data = JSON(response.result.value!)
                 self.cv.reloadData()

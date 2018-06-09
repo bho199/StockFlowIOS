@@ -38,7 +38,7 @@ class HomeeViewController: UIViewController, UICollectionViewDataSource, UIColle
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! HomeeCollectionViewCell
         
-        Alamofire.request("https://api.coinmarketcap.com/v1/ticker/").responseJSON {response in
+        JsonManager.sharedInstance.manager.request("https://api.coinmarketcap.com/v1/ticker/").responseJSON {response in
                 
             let allData = JSON(response.result.value!)
             cell.n1name.text = "\(allData[indexPath.row]["name"].stringValue)"

@@ -39,7 +39,7 @@ class CryptoDetailsViewController: UIViewController, UIPopoverPresentationContro
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        Alamofire.request("https://api.coinmarketcap.com/v1/ticker/").responseJSON {response in
+        JsonManager.sharedInstance.manager.request("https://api.coinmarketcap.com/v1/ticker/").responseJSON {response in
             
             let allData = JSON(response.result.value!)
 
@@ -75,7 +75,7 @@ class CryptoDetailsViewController: UIViewController, UIPopoverPresentationContro
         let confirmAction = UIAlertAction(title: "Buy", style: .default) { (_) in
             print(alertController.textFields![0].text!)
             
-            Alamofire.request("https://api.coinmarketcap.com/v1/ticker/").responseJSON {response in
+            JsonManager.sharedInstance.manager.request("https://api.coinmarketcap.com/v1/ticker/").responseJSON {response in
                 let allData = JSON(response.result.value!)
                 self.price = allData[self.cryptoRank]["price_usd"].floatValue
                 
@@ -88,7 +88,7 @@ class CryptoDetailsViewController: UIViewController, UIPopoverPresentationContro
                         "user_id" : UserDefaults.standard.integer(forKey: "userId")
                     ]
                     
-                    Alamofire.request("http://stockflow.test/api/crypto", method: .post, parameters: parameters).responseJSON {response in
+                    JsonManager.sharedInstance.manager.request("https://stockflow.test/api/crypto", method: .post, parameters: parameters).responseJSON {response in
                         let allData = JSON(response.result.value!)
                     }
                 }

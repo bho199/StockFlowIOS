@@ -85,11 +85,15 @@ class CryptoDetailsViewController: UIViewController, UIPopoverPresentationContro
                         "name" : self.nameDetail.text!,
                         "quantity" : Float(alertController.textFields![0].text!)! / self.price,
                         "value" : alertController.textFields![0].text!,
+                        "value_now" : self.price,
                         "user_id" : UserDefaults.standard.integer(forKey: "userId")
                     ]
                     
-                    JsonManager.sharedInstance.manager.request("https://stockflow.test/api/crypto", method: .post, parameters: parameters).responseJSON {response in
-                        let allData = JSON(response.result.value!)
+                    JsonManager.sharedInstance.manager.request("https://stockflow.test/api/crypto", method: .post, parameters: parameters)
+                    .validate(statusCode:200..<300)
+                    .response {response in
+                        print("oke")
+                        //let allData = JSON(response.result.value!)
                     }
                 }
             }

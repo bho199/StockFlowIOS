@@ -22,6 +22,8 @@ class WalletViewController: UIViewController, UICollectionViewDelegate, UICollec
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        walletVal = 0
+        walletCha = 0
         
         
         let walletParameters:Parameters = [
@@ -32,7 +34,7 @@ class WalletViewController: UIViewController, UICollectionViewDelegate, UICollec
             self.allData = JSON(response.result.value!)
             self.cv.reloadData()
             
-            Alamofire.request("https://api.coinmarketcap.com/v1/ticker/").responseJSON {response in
+            JsonManager.sharedInstance.manager.request("https://api.coinmarketcap.com/v1/ticker/").responseJSON {response in
                 
                 self.data = JSON(response.result.value!)
                 self.cv.reloadData()
@@ -43,8 +45,8 @@ class WalletViewController: UIViewController, UICollectionViewDelegate, UICollec
                     self.walletCha += crypto["value"].floatValue
                 }
                 self.walletTotalValue.text = "$ \(self.walletVal)"
-//                self.walletTotalChange.text = "\(((self.walletCha * 100) / self.walletVal - 100) * -1) %"
                 self.walletTotalChange.text = "\(((self.walletVal / self.walletCha) - 1) * 100) %"
+                
                 // Do any additional setup after loading the view.
                 if ((((self.walletVal / self.walletCha) - 1) * 100) >= 0) {
                     self.walletTotalChange.textColor = UIColor.green
@@ -106,4 +108,55 @@ class WalletViewController: UIViewController, UICollectionViewDelegate, UICollec
         return walletCell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let alertController = UIAlertController(title: "Do you want to sell this?", message: "", preferredStyle: .alert)
+        
+        //the confirm action taking the inputs
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel) {
+            (_) in
+            print("Cancel Pressed")
+        }
+        
+        let confirmAction = UIAlertAction(title: "Sell", style: UIAlertActionStyle.default) { (_) in
+            print(self.allData[indexPath.row]["id"].stringValue)
+            let parameters:Parameters = [
+                "id" : self.allData[indexPath.row]["id"].stringValue,
+                ]
+            
+            Alamofire.request("http://stockflow.test/api/sell", method: .post, parameters: parameters).responseJSON {response in
+                let sellController = UIAlertController(title: "Transaction Removed", message: "You Sold Your Cryptos", preferredStyle: .alert)
+                let sellAction = UIAlertAction(title: "Done", style: UIAlertActionStyle.default) { (_) in
+                    self.viewDidLoad()
+                    collectionView.reloadData()
+                }
+                sellController.addAction(sellAction)
+                self.present(sellController, animated: true, completion: nil)
+                
+            }
+        }
+        
+        //adding the action to dialogbox        
+        alertController.addAction(confirmAction)
+        alertController.addAction(cancelAction)
+        
+        //finally presenting the dialog box
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    @IBAction func logout(_ sender: Any) {
+        UserDefaults.standard.set(false, forKey: "IsUserLoggedIn")
+        let loginPage: ViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "loginPage") as! ViewController
+        let logoutController = UIAlertController(title: "Logout", message: "Are you sure?", preferredStyle: .alert)
+        let logoutConfirmed = UIAlertAction(title: "Continue", style: UIAlertActionStyle.default) {
+            (_) in
+            self.present(loginPage, animated: true, completion: nil)
+        }
+        let logoutCancelled = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel) {
+            (_) in
+            print("cancel")
+        }
+        logoutController.addAction(logoutConfirmed)
+        logoutController.addAction(logoutCancelled)
+        self.present(logoutController, animated: true, completion: nil)
+    }
 }

@@ -10,7 +10,8 @@ import UIKit
 
 class TrendsCollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet weak var trendsView: UIView!
+
+    @IBOutlet weak var trenView: UIView!
     @IBOutlet weak var trendsChange: UILabel!
     @IBOutlet weak var trendsProfit: UILabel!
     @IBOutlet weak var trendsUser: UILabel!

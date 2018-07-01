@@ -369,14 +369,21 @@ class HomeeViewController: UIViewController, UICollectionViewDataSource, UIColle
         cell.shadowOfTheColossus.layer.cornerRadius = 13
         return cell
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    @IBAction func logout(_ sender: Any) {
+        UserDefaults.standard.set(false, forKey: "IsUserLoggedIn")
+        let loginPage: ViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "loginPage") as! ViewController
+        let logoutController = UIAlertController(title: "Logout", message: "Are you sure?", preferredStyle: .alert)
+        let logoutConfirmed = UIAlertAction(title: "Continue", style: UIAlertActionStyle.default) {
+            (_) in
+            self.present(loginPage, animated: true, completion: nil)
+        }
+        let logoutCancelled = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel) {
+            (_) in
+            print("cancel")
+        }
+        logoutController.addAction(logoutConfirmed)
+        logoutController.addAction(logoutCancelled)
+        self.present(logoutController, animated: true, completion: nil)
     }
-    */
-
 }

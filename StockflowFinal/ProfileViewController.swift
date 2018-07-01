@@ -9,7 +9,6 @@
 import UIKit
 
 class ProfileViewController: UIViewController {
-    @IBOutlet weak var profileUsername: UILabel!
     
     @IBAction func logout(_ sender: Any) {
         UserDefaults.standard.set(false, forKey: "IsUserLoggedIn")

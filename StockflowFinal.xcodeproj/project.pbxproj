@@ -22,10 +22,11 @@
 		12D9C2642062BB91007D89EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D9C2632062BB91007D89EC /* AppDelegate.swift */; };
 		12D9C2662062BB91007D89EC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D9C2652062BB91007D89EC /* ViewController.swift */; };
 		12D9C2692062BB91007D89EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12D9C2672062BB91007D89EC /* Main.storyboard */; };
-		12D9C26B2062BB91007D89EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12D9C26A2062BB91007D89EC /* Assets.xcassets */; };
 		12D9C26E2062BB91007D89EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12D9C26C2062BB91007D89EC /* LaunchScreen.storyboard */; };
+		12DF5C3A20E64BFB0009EF6C /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12DF5C3920E64BFB0009EF6C /* Media.xcassets */; };
 		12F8188A207DF3BB009DC418 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F81889207DF3BB009DC418 /* SettingsViewController.swift */; };
 		2344EC6748647623199AEF0A /* Pods_StockflowFinal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46F7A2859E8671D901525FDD /* Pods_StockflowFinal.framework */; };
+		BF95276120CBD40600D06ABA /* JsonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF95276020CBD40600D06ABA /* JsonManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,13 +46,14 @@
 		12D9C2632062BB91007D89EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		12D9C2652062BB91007D89EC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		12D9C2682062BB91007D89EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		12D9C26A2062BB91007D89EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		12D9C26D2062BB91007D89EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		12D9C26F2062BB91007D89EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		12DF5C3920E64BFB0009EF6C /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		12F81889207DF3BB009DC418 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		2C4D6DD20CCB4D12BE22723C /* Pods-StockflowFinal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StockflowFinal.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StockflowFinal/Pods-StockflowFinal.debug.xcconfig"; sourceTree = "<group>"; };
 		46F7A2859E8671D901525FDD /* Pods_StockflowFinal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StockflowFinal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EEB4E887BD6A03450204BB8 /* Pods-StockflowFinal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StockflowFinal.release.xcconfig"; path = "Pods/Target Support Files/Pods-StockflowFinal/Pods-StockflowFinal.release.xcconfig"; sourceTree = "<group>"; };
+		BF95276020CBD40600D06ABA /* JsonManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				12D9C2632062BB91007D89EC /* AppDelegate.swift */,
+				BF95276020CBD40600D06ABA /* JsonManager.swift */,
 				12D9C2652062BB91007D89EC /* ViewController.swift */,
 				12F81889207DF3BB009DC418 /* SettingsViewController.swift */,
 				1255E69020BC435A00559B8B /* Calendar */,
@@ -126,7 +129,7 @@
 				12448B0F20C6BF1E00422B40 /* TrendsCollectionViewCell.swift */,
 				1207DDB920758D0A004713E3 /* CryptoDetailsViewController.swift */,
 				12D9C2672062BB91007D89EC /* Main.storyboard */,
-				12D9C26A2062BB91007D89EC /* Assets.xcassets */,
+				12DF5C3920E64BFB0009EF6C /* Media.xcassets */,
 				122464C9206BB91700E5E4D3 /* calendar.html */,
 				12D9C26C2062BB91007D89EC /* LaunchScreen.storyboard */,
 				12D9C26F2062BB91007D89EC /* Info.plist */,
@@ -214,8 +217,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				12D9C26E2062BB91007D89EC /* LaunchScreen.storyboard in Resources */,
-				12D9C26B2062BB91007D89EC /* Assets.xcassets in Resources */,
 				122464CA206BB91700E5E4D3 /* calendar.html in Resources */,
+				12DF5C3A20E64BFB0009EF6C /* Media.xcassets in Resources */,
 				12D9C2692062BB91007D89EC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -279,6 +282,7 @@
 				12BEFD3F20A1C73600325B67 /* WalletCollectionViewCell.swift in Sources */,
 				12A1A186207C57010066C367 /* TrendsViewController.swift in Sources */,
 				1202F2052097540F00827F78 /* InitialViewController.swift in Sources */,
+				BF95276120CBD40600D06ABA /* JsonManager.swift in Sources */,
 				12A1A184207C56F20066C367 /* ProfileViewController.swift in Sources */,
 				1206DD72206FD00F005DEAC6 /* HomeeCollectionViewCell.swift in Sources */,
 				12D9C2642062BB91007D89EC /* AppDelegate.swift in Sources */,
@@ -423,7 +427,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = StockflowFinal/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = IED.StockflowFinal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -440,7 +444,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = StockflowFinal/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = IED.StockflowFinal;
 				PRODUCT_NAME = "$(TARGET_NAME)";

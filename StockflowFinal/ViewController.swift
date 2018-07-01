@@ -12,8 +12,6 @@ import SwiftyJSON
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var register: UIButton!
-    @IBOutlet weak var noAccount: UIButton!
     @IBOutlet weak var login: UIButton!
     @IBOutlet weak var passwordText: UITextField!
     @IBOutlet weak var usernameText: UITextField!
@@ -43,14 +41,10 @@ class ViewController: UIViewController {
         login.backgroundColor = UIColor.gray
         login.setTitleColor (UIColor.white, for: .normal)
         
-        register.setTitle("Registrati qui", for: .normal)
-        
-        self.view.addSubview(register)
         self.view.addSubview(login)
         self.view.addSubview(usernameText)
         self.view.addSubview(passwordText)
         self.view.addSubview(stockTitle)
-        self.view.addSubview(noAccount)
     }
     
     @IBAction func authenticateUser(_ sender: Any) {
@@ -69,6 +63,7 @@ class ViewController: UIViewController {
                 let vc2: HomeeViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeeViewController") as! HomeeViewController
                 self.present(vc2, animated: true, completion: nil)
             } else {
+                print("30")
             }
         }        
     }
